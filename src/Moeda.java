@@ -1,3 +1,6 @@
+// Melissa Rios de Sousa
+// RU: 4025304
+
 public abstract class Moeda {
 	public double valor;
 	
