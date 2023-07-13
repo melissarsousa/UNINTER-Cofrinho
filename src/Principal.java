@@ -35,7 +35,6 @@ public class Principal {
 			    
                 case 1:
 			    
-                System.out.println("Adicionar moeda:\n");
 			    int tipo;
 			    
                 do {
@@ -83,7 +82,6 @@ public class Principal {
 			    }
 					
 				case 2:
-				    System.out.println("Remover moeda:\n");
 				    System.out.println("Qual moeda voce deseja remover ?");
 				    System.out.println("1 - Real");
 				    System.out.println("2 - Dólar");
@@ -92,20 +90,26 @@ public class Principal {
 
 				    if(opcao == 1) {
 				        System.out.println("\nDigite o valor da moeda que deseja remover: ");
+						System.out.println("OBS: Só é possível remover o valor total da moeda.");
 				        double valor = teclado.nextDouble();
-				        cofrinho.remover(valor); 
+						Real real = new Real(valor);
+				        cofrinho.remover(real); 
 				        break;
 				    }
 				    else if(opcao == 2) {
 				        System.out.println("\nDigite o valor da moeda que deseja remover: ");
+						System.out.println("OBS: Só é possível remover o valor total da moeda.");						
 				        double valor = teclado.nextDouble();
-				        cofrinho.remover(valor);
+						Dolar dolar = new Dolar(valor);
+				        cofrinho.remover(dolar);
 				        break;
 				    }
 				    else if(opcao == 3){
 				        System.out.println("\nDigite o valor da moeda que deseja remover: ");
+						System.out.println("OBS: Só é possível remover o valor total da moeda.");
 				        double valor = teclado.nextDouble();
-				        cofrinho.remover(valor);
+						Euro euro = new Euro(valor);
+				        cofrinho.remover(euro);
 				        break;
 				    }
 				    else {

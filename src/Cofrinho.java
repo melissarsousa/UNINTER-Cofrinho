@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class Cofrinho {
 	private ArrayList<Moeda> listaMoedas = new ArrayList<Moeda>();
@@ -6,21 +7,20 @@ public class Cofrinho {
 	public void adicionar(Moeda moeda) {
 		listaMoedas.add(moeda);
 	}
-	public void remover(double valor) {
-	    for (Moeda moeda : listaMoedas) {
-	        if (moeda.getValor() == valor) {
-	            listaMoedas.remove(moeda);
-	            return;
-	        }
-            else if (moeda.getValor() != valor && moeda.getValor() != 0) {
-                double total = moeda.getValor();
-                double valorFinal = total - valor;
-                return;
-            }
-            else {
-                System.out.println("Cofrinho vazio.");
-            }
-	    }
+	public void remover(Moeda moeda) {
+	    Iterator<Moeda> iterator = this.listaMoedas.iterator();
+	        
+		while (iterator.hasNext()){
+			Moeda iteratorMoeda = iterator.next();
+
+			if (iteratorMoeda.toString().equals(moeda.toString())){
+				iterator.remove();
+				return;
+			}
+		}
+
+		System.out.println("Não foi possível remover o valor do cofrinho.");
+	
 	}
 	public void listagemMoedas() {
 		for(Moeda m : listaMoedas) {
